@@ -1,0 +1,44 @@
+/* * Wofi CSS for pywal
+ * ~/.config/wofi/style.css
+ */
+
+/* Import pywal colors */
+@import "/home/gabriel/.cache/wal/colors.css";
+
+* {
+    /* Use the same Nerd Font as your Waybar */
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 15px;
+}
+
+#window {
+    background-color: rgba(20, 20, 20, 0.85);
+
+    border: 2px solid @color1;
+    border-radius: 8px;
+}
+
+#input {
+    background-color: @color0;
+    color: @foreground;
+    border-radius: 4px;
+    border: none;
+    padding: 8px;
+    margin: 8px;
+}
+
+#entry {
+    color: @foreground;
+    padding: 8px;
+}
+
+#entry:selected {
+    background-color: @color1;
+    color: @background;
+    border-radius: 4px;
+}
+
+#prompt {
+    padding-left: 8px;
+    color: @color1;
+}

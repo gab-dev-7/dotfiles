@@ -1,0 +1,96 @@
+# ~/.config/yazi/opener.toml
+
+# ==================================
+# 1. Custom Rule: PDF files open in Thunar
+# ==================================
+[[open.rules]]
+mime = "application/pdf"
+use = [
+    { run = 'thunar "$(dirname "$@")"', desc = "Open Folder in Thunar" },
+]
+
+# ==================================
+# 2. Programming files open with Neovim
+# ==================================
+[[open.rules]]
+mime = "text/*"
+use = [
+    { run = 'nvim "$@"', desc = "Open with Neovim" },
+]
+
+# Handle specific application types that are actually text files
+[[open.rules]]
+name = "*.py"
+use = [
+    { run = 'nvim "$@"', desc = "Open Python with Neovim" },
+]
+
+[[open.rules]]
+name = "*.java"
+use = [
+    { run = 'nvim "$@"', desc = "Open Java with Neovim" },
+]
+
+[[open.rules]]
+name = "*.js"
+use = [
+    { run = 'nvim "$@"', desc = "Open JavaScript with Neovim" },
+]
+
+[[open.rules]]
+name = "*.ts"
+use = [
+    { run = 'nvim "$@"', desc = "Open TypeScript with Neovim" },
+]
+
+[[open.rules]]
+name = "*.html"
+use = [
+    { run = 'nvim "$@"', desc = "Open HTML with Neovim" },
+]
+
+[[open.rules]]
+name = "*.css"
+use = [
+    { run = 'nvim "$@"', desc = "Open CSS with Neovim" },
+]
+
+[[open.rules]]
+name = "*.json"
+use = [
+    { run = 'nvim "$@"', desc = "Open JSON with Neovim" },
+]
+
+[[open.rules]]
+name = "*.yaml"
+use = [
+    { run = 'nvim "$@"', desc = "Open YAML with Neovim" },
+]
+
+[[open.rules]]
+name = "*.yml"
+use = [
+    { run = 'nvim "$@"', desc = "Open YML with Neovim" },
+]
+
+[[open.rules]]
+name = "*.sh"
+use = [
+    { run = 'nvim "$@"', desc = "Open Shell script with Neovim" },
+]
+
+# ==================================
+# 3. Other application files use system default
+# ==================================
+[[open.rules]]
+mime = "application/*"
+use = [
+    { run = 'xdg-open "$@"', desc = "Open with System Default" },
+]
+
+# Fallback for all other file types
+[[open.rules]]
+mime = "*/*"
+use = [
+    { run = 'xdg-open "$@"', desc = "Open with System Default" },
+]

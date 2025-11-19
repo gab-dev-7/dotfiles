@@ -1,0 +1,93 @@
+/* Import Pywal colors */
+@import "/home/gabriel/.cache/wal/colors-waybar.css";
+
+/* --- 1. Set Global Font --- */
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 15px; /* <-- Increased font size */
+    font-weight: bold;
+}
+
+/* --- 2. Main Bar Style --- */
+window#waybar {
+    /* Use pywal background, but make it very transparent */
+    background-color: alpha(@background, 0.1);
+    /* --- Bottom border line removed --- */
+}
+
+/* --- 3. Module Backgrounds (Your Request) --- */
+#cpu,
+#memory,
+#temperature,
+#battery,
+#clock,
+#tray,
+#custom-power{
+    background-color: alpha(@background, 0.4);
+    border: 1px solid alpha(@color1, 0.5);
+    border-radius: 8px;
+    padding: 0 10px;
+    margin: 4px 5px;
+}
+
+/* --- 4. Individual Module Styles --- */
+#workspaces button {
+    padding: 0 10px;
+    color: @color3;
+    background-color: transparent;
+}
+
+#workspaces button.active {
+    color: @foreground;
+    background-color: alpha(@color1, 0.5);
+    border-radius: 8px;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@foreground, 0.2);
+    border-radius: 8px;
+}
+
+#clock { color: @color6; }
+#battery { color: @color5; }
+#network { color: @color4; }
+#memory { color: @color3; }
+#cpu { color: @color2; }
+#temperature { color: @color1; }
+
+/* --- 5. State Classes (Warning & Critical) --- */
+
+/* First, define a flashing animation */
+@keyframes blink {
+    to {
+        background-color: @color1;
+        color: @background;
+    }
+}
+
+/*
+ * WARNING STATE (Solid Yellow)
+ * Uses Pywal 'color3' (yellow)
+*/
+#cpu.warning,
+#memory.warning,
+#temperature.warning {
+    background-color: @color3;
+    color: @background;
+}
+
+/*
+ * CRITICAL STATE (Flashing Red)
+ * Uses Pywal 'color1' (red)
+*/
+#cpu.critical,
+#memory.critical,
+#temperature.critical {
+    background-color: alpha(@color1, 0.7);
+    color: @foreground;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

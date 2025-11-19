@@ -1,0 +1,23 @@
+/*
+* GTK Colors
+* Generated with Matugen
+*/
+
+@define-color accent_color #ffb4a8;
+@define-color accent_fg_color #561e16;
+@define-color accent_bg_color #ffb4a8;
+@define-color window_bg_color #1a1110;
+@define-color window_fg_color #f1dfdc;
+@define-color headerbar_bg_color #1a1110;
+@define-color headerbar_fg_color #f1dfdc;
+@define-color popover_bg_color #1a1110;
+@define-color popover_fg_color #f1dfdc;
+@define-color view_bg_color #1a1110;
+@define-color view_fg_color #f1dfdc;
+@define-color card_bg_color #1a1110;
+@define-color card_fg_color #f1dfdc;
+@define-color sidebar_bg_color @window_bg_color;
+@define-color sidebar_fg_color @window_fg_color;
+@define-color sidebar_border_color @window_bg_color;
+@define-color sidebar_backdrop_color @window_bg_color;
+@import 'colors.css';

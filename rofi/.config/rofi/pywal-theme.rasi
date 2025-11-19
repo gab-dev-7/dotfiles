@@ -1,0 +1,84 @@
+/*
+ * V2: Even more minimal, dark, and stable.
+ * - Explicitly sets backgrounds to transparent to fix "weird white".
+ */
+configuration {
+    modi:               "drun";
+    show-icons:         true;
+    lines:              5;      /* Show 5 lines */
+    columns:            1;
+    display-drun:       "Search";
+}
+
+/* Hard-coded dark colors */
+* {
+    background:         #2E3440;
+    background-light:   #3B4252;
+    foreground:         #D8DEE9;
+    selected:           #88C0D0;
+    selected-text:      #2E3440;
+}
+
+window {
+    background-color:   @background;
+    border:             1px;
+    border-color:       @selected;
+    border-radius:      8px;
+    width:              30%;
+    padding:            15px;
+    location:           center;
+    anchor:             center;
+}
+
+inputbar {
+    background-color:   @background-light;
+    text-color:         @foreground;
+    border-radius:      5px;
+    padding:            8px;
+    children:           [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color:         @selected;
+    background-color:   transparent;
+}
+
+entry {
+    text-color:         @foreground;
+    placeholder:        "Search Apps...";
+    placeholder-color:  @foreground;
+    background-color:   transparent;
+}
+
+listview {
+    background-color:   transparent;
+    padding:            10px 0 0 0;
+    lines:              5; /* Only show 5 lines */
+}
+
+/* This is the unselected item */
+element {
+    padding:            8px;
+    border-radius:      5px;
+    background-color:   @background;
+}
+
+element-text {
+    text-color:         @foreground;
+    background-color:   transparent;
+}
+
+element-icon {
+    size:               24px;
+    background-color:   transparent;
+}
+
+/* This is the selected item */
+element.selected {
+    background-color:   @selected;
+}
+
+/* This is the text of the selected item */
+element.selected element-text {
+    text-color:         @selected-text;
+}

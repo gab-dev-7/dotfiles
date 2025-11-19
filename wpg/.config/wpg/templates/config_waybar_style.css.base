@@ -1,0 +1,54 @@
+* {
+    /* Set your Nerd Font here */
+    font-family: 'JetBrains Mono Nerd', 'Font Awesome 6 Free';
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+/* Style for the active workspace */
+#workspaces button.active {
+    background-color: #33ccff;
+    color: #000000;
+}
+
+/* Style for workspaces with a window in them */
+#workspaces button.occupied {
+    background-color: transparent;
+    color: #aaaaaa;
+}
+
+#workspaces button:hover {
+    background: #33ccff;
+    color: #000000;
+    box-shadow: inherit;
+}
+
+#clock,
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 10px;
+    margin: 0 5px;
+}
+
+/* Add a bit of space between tray icons */
+#tray > .passive-item {
+    margin-right: 7px;
+}
+#tray > .active-item {
+    margin-right: 7px;
+}

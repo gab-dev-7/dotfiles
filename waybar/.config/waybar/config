@@ -1,0 +1,70 @@
+{
+  "layer": "top",
+    "position": "top",
+    "height": 35,
+
+    "modules-left": ["cpu", "memory", "temperature"],
+    "modules-center": ["hyprland/workspaces"],
+    // UPDATED: "pulseaudio" removed, "battery" added
+    "modules-right": ["battery", "custom/power", "clock", "tray"],
+
+  "cpu": {
+    "format": " {usage}%",
+    "on-click": "kitty -e btop",
+    "warning-threshold": 50,
+    "critical-threshold": 80
+},
+  "memory": {
+    "format": " {used:0.1f}G",
+    "on-click": "kitty -e btop",
+    "warning-threshold": 50,
+    "critical-threshold": 80
+},
+  "temperature": {
+    "format": " {temperatureC}°C",
+    "warning-threshold": 65,
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C"
+},
+
+  "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-alt": "{time} {icon}",
+        // Icons from low to high
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "on-click-right": "mode"
+    },
+
+    "clock": {
+      "format": "󰃭 {:%H:%M}",
+      "format-alt": " {:%a, %b %d}",
+      "on-click-right": "mode",
+      "on-click": "yad --calendar --no-buttons --on-top"
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+ 
+    "custom/power": {
+        "exec": "bash ~/scripts/power_profile_waybar.sh",
+        "return-type": "json",  /* <-- THIS IS THE FIX */
+        "on-click": "bash ~/scripts/toggle_power.sh",
+        "interval": 5,
+        "format": "{text}",
+        "tooltip": true
+    }
+}
