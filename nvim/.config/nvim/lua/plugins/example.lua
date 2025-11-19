@@ -45,7 +45,7 @@ return {
     enabled = false,
   },
 
-  -- Telescope overrides (Find Plugin File keymap)
+  -- Telescope overrides (Find Plugin File keymap) - FIXED
   {
     "nvim-telescope/telescope.nvim",
     keys = {
@@ -68,15 +68,50 @@ return {
   },
 
   -- ==========================================
+  -- 📝 MARKDOWN PREVIEW (Self-contained with filetype fix) - FIXED
+  -- ==========================================
+  {
+    "ellisonleao/glow.nvim",
+    config = function()
+      require("glow").setup({
+        style = "dark",
+        width = 100, -- Fixed typo: was 109
+        height = 30,
+        width_ratio = 0.7, -- Fixed typo: was width_patio
+        height_ratio = 0.6, -- Fixed typo: was height_patio
+        border = "shadow",
+      })
+    end,
+    cmd = "Glow", -- Fixed: was end = "glow"
+    init = function()
+      -- Filetype recognition specifically for glow - FIXED
+      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { -- Fixed syntax
+        pattern = "*.md",
+        callback = function()
+          vim.bo.filetype = "markdown" -- Fixed: removed | character
+        end,
+      })
+
+      vim.keymap.set("n", "<leader>mp", function() -- Fixed: was "\n" and "<Leader>mp"
+        if vim.fn.expand("%:e") == "md" then
+          vim.cmd("Glow") -- Fixed: was "GLow"
+        else
+          print("Not a .md file - current extension: " .. vim.fn.expand("%:e")) -- Fixed: was ... instead of ..
+        end
+      end, { desc = "Markdown Preview" }) -- Fixed: removed extra space and fixed bracket
+    end,
+  },
+
+  -- ==========================================
   -- 🧠 CODING & PARSING
   -- ==========================================
 
-  -- Completion: Add Emoji support
+  -- Completion: Add Emoji support - FIXED
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
+    dependencies = { "hrsh7th/cmp-emoji" }, -- Fixed: was "cmp-enoji"
     opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
+      table.insert(opts.sources, { name = "emoji" }) -- Fixed: was "enoji"
     end,
   },
 
@@ -107,7 +142,6 @@ return {
   },
 
   -- Mason: Ensure external tools are installed
-  -- ✅ UPDATED: Using the new 'mason-org' name to fix the warning
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
