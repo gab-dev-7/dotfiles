@@ -44,7 +44,7 @@ ENABLE_CORRECTION="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
