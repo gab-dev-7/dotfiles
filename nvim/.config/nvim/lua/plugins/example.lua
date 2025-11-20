@@ -9,7 +9,6 @@ return {
     priority = 1000,
   },
 
-  -- Configure LazyVim to load the 'neopywal' colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
@@ -17,15 +16,12 @@ return {
     },
   },
 
-  -- Disable the alpha dashboard (optional)
   { "folke/alpha-nvim", enabled = false },
 
-  -- Lualine customization (Merged into one block)
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      -- Add emoji to lualine
       table.insert(opts.sections.lualine_x, {
         function()
           return "😄"
@@ -38,14 +34,12 @@ return {
   -- 🔧 EDITOR TOOLS
   -- ==========================================
 
-  -- Trouble configuration (Disabled as per your previous file)
   {
     "folke/trouble.nvim",
     opts = { use_diagnostic_signs = true },
     enabled = false,
   },
 
-  -- Telescope overrides (Find Plugin File keymap) - FIXED
   {
     "nvim-telescope/telescope.nvim",
     keys = {
@@ -68,37 +62,36 @@ return {
   },
 
   -- ==========================================
-  -- 📝 MARKDOWN PREVIEW (Self-contained with filetype fix) - FIXED
+  -- 📝 MARKDOWN PREVIEW
   -- ==========================================
   {
     "ellisonleao/glow.nvim",
     config = function()
       require("glow").setup({
         style = "dark",
-        width = 100, -- Fixed typo: was 109
+        width = 100,
         height = 30,
-        width_ratio = 0.7, -- Fixed typo: was width_patio
-        height_ratio = 0.6, -- Fixed typo: was height_patio
+        width_ratio = 0.7,
+        height_ratio = 0.6,
         border = "shadow",
       })
     end,
-    cmd = "Glow", -- Fixed: was end = "glow"
+    cmd = "Glow",
     init = function()
-      -- Filetype recognition specifically for glow - FIXED
-      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { -- Fixed syntax
+      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
         pattern = "*.md",
         callback = function()
-          vim.bo.filetype = "markdown" -- Fixed: removed | character
+          vim.bo.filetype = "markdown"
         end,
       })
 
-      vim.keymap.set("n", "<leader>mp", function() -- Fixed: was "\n" and "<Leader>mp"
+      vim.keymap.set("n", "<leader>mp", function()
         if vim.fn.expand("%:e") == "md" then
-          vim.cmd("Glow") -- Fixed: was "GLow"
+          vim.cmd("Glow")
         else
-          print("Not a .md file - current extension: " .. vim.fn.expand("%:e")) -- Fixed: was ... instead of ..
+          print("Not a .md file - current extension: " .. vim.fn.expand("%:e"))
         end
-      end, { desc = "Markdown Preview" }) -- Fixed: removed extra space and fixed bracket
+      end, { desc = "Markdown Preview" })
     end,
   },
 
@@ -106,16 +99,36 @@ return {
   -- 🧠 CODING & PARSING
   -- ==========================================
 
-  -- Completion: Add Emoji support - FIXED
+  -- ⚠️ NEW: Fix for Java "Non-Project File" Warning
+  -- This tells the LSP to look for .iml or .git to determine the root
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        jdtls = {
+          root_dir = function(fname)
+            return require("lspconfig.util").root_pattern(
+              ".git", -- Look for Git root (Best for GitLab projects)
+              "*.iml", -- Look for IntelliJ idea files (Uni projects)
+              "mvnw", -- Maven
+              "gradlew", -- Gradle
+              "pom.xml",
+              "build.gradle"
+            )(fname) or vim.fn.getcwd()
+          end,
+        },
+      },
+    },
+  },
+
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" }, -- Fixed: was "cmp-enoji"
+    dependencies = { "hrsh7th/cmp-emoji" },
     opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" }) -- Fixed: was "enoji"
+      table.insert(opts.sources, { name = "emoji" })
     end,
   },
 
-  -- Treesitter: Ensure syntax highlighters are installed
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
@@ -141,7 +154,6 @@ return {
     end,
   },
 
-  -- Mason: Ensure external tools are installed
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
@@ -150,7 +162,8 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
-        "codelldb", -- C/C++ Debugger
+        "codelldb",
+        "jdtls", -- Ensure Java Language Server is actually installed
       })
     end,
   },
