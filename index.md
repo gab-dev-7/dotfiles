@@ -135,7 +135,6 @@ If you are new to this ecosystem, these are the essential guides to keep bookmar
 ## Gallery
 
 <div class="grid">
-    <img src="assets/images/h1.jpg" alt="Screenshot 1" style="border-radius: 8px; border: 1px solid #1e293b;">
     <img src="assets/images/h2.jpg" alt="Screenshot 2" style="border-radius: 8px; border: 1px solid #1e293b;">
     <img src="assets/images/h3.jpg" alt="Screenshot 3" style="border-radius: 8px; border: 1px solid #1e293b;">
     <img src="assets/images/h4.jpg" alt="Screenshot 4" style="border-radius: 8px; border: 1px solid #1e293b;">
