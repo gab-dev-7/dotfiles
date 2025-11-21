@@ -4,7 +4,7 @@ title: Home
 ---
 
 <header>
-    <h1>.dotfiles</h1>
+    <h1>.files</h1>
     <p class="subtitle">Arch Linux // Hyprland // Zsh // Pywal</p>
     <div style="margin-top: 1.5rem;">
         <a href="https://github.com/gab-dev-7/dotfiles" class="btn">View Source</a>
@@ -12,7 +12,8 @@ title: Home
 </header>
 
 ## The Philosophy
-This is not just a collection of config files; it is a cohesive **environment**. 
+
+This is not just a collection of config files; it is a cohesive **environment**.
 
 If you are coming from Windows or macOS, this setup replaces the "floating window" chaos with a strict **Tiling Window Manager**. Windows automatically snap into a grid, maximizing screen real estate and allowing you to navigate your entire OS without ever touching a mouse.
 
@@ -54,27 +55,30 @@ If you are coming from Windows or macOS, this setup replaces the "floating windo
 > **Warning:** This script assumes a fresh Arch Linux install. It uses `stow` to manage symlinks. Back up your data before running this.
 
 ### 1. Update & Prep
+
 Ensure your system core is up to date and you have Git installed.
 
-~~~bash
+```bash
 sudo pacman -Syu git
-~~~
+```
 
 ### 2. Download the Configs
-Clone this repository to your home folder. The folder name *must* be `dotfiles` for the symlinks to work automatically.
 
-~~~bash
+Clone this repository to your home folder. The folder name _must_ be `dotfiles` for the symlinks to work automatically.
+
+```bash
 git clone https://github.com/gab-dev-7/dotfiles.git "$HOME/dotfiles"
 cd "$HOME/dotfiles"
-~~~
+```
 
 ### 3. Automated Install
+
 Run the script. This will install the required packages (Hyprland, Neovim, etc.) and link the config files to `~/.config/`.
 
-~~~bash
+```bash
 chmod +x install.sh
 ./install.sh
-~~~
+```
 
 **After Install:** Reboot your machine. On the login screen (SDDM), click the gear icon and select **Hyprland** before logging in.
 
@@ -86,34 +90,34 @@ The workflow is designed to be entirely keyboard-driven using the `Super` key (W
 
 ### 🚀 Applications
 
-| Key Combo | Action |
-| :--- | :--- |
-| `Super + Return` | **Terminal** (Kitty) |
-| `Super + E` | **File Manager** (Thunar) |
-| `Super + B` | **Browser** (Zen Browser) |
-| `Super + D` | **App Launcher** (Wofi) |
-| `Super + Space` | **Alternative Launcher** |
+| Key Combo        | Action                    |
+| :--------------- | :------------------------ |
+| `Super + Return` | **Terminal** (Kitty)      |
+| `Super + E`      | **File Manager** (Thunar) |
+| `Super + B`      | **Browser** (Zen Browser) |
+| `Super + D`      | **App Launcher** (Wofi)   |
+| `Super + Space`  | **Alternative Launcher**  |
 
 ### ⚙️ System Controls
 
-| Key Combo | Action |
-| :--- | :--- |
-| `Super + W` | **Change Wallpaper** (Random + Pywal) |
-| `Super + Shift + S` | **Screenshot** (Grimblast) |
-| `Super + P` | **Power Menu** (Shutdown/Reboot) |
-| `Super + L` | **Lock Screen** |
-| `Super + Shift + C` | **Clipboard History** |
-| `Super + Shift + B` | **Toggle Blue Light** (Gammastep) |
+| Key Combo           | Action                                |
+| :------------------ | :------------------------------------ |
+| `Super + W`         | **Change Wallpaper** (Random + Pywal) |
+| `Super + Shift + S` | **Screenshot** (Grimblast)            |
+| `Super + P`         | **Power Menu** (Shutdown/Reboot)      |
+| `Super + L`         | **Lock Screen**                       |
+| `Super + Shift + C` | **Clipboard History**                 |
+| `Super + Shift + B` | **Toggle Blue Light** (Gammastep)     |
 
 ### 🪟 Window Management
 
-| Key Combo | Action |
-| :--- | :--- |
-| `Super + Q` | **Close Active Window** |
-| `Super + F` | **Toggle Fullscreen** |
-| `Super + V` | **Toggle Floating Mode** |
+| Key Combo         | Action                    |
+| :---------------- | :------------------------ |
+| `Super + Q`       | **Close Active Window**   |
+| `Super + F`       | **Toggle Fullscreen**     |
+| `Super + V`       | **Toggle Floating Mode**  |
 | `Super + H/J/K/L` | **Move Focus** (Vim keys) |
-| `Alt + Tab` | **Cycle Windows** |
+| `Alt + Tab`       | **Cycle Windows**         |
 
 ---
 
@@ -121,10 +125,10 @@ The workflow is designed to be entirely keyboard-driven using the `Super` key (W
 
 If you are new to this ecosystem, these are the essential guides to keep bookmarked:
 
-* [📖 Arch Linux Installation Guide](https://wiki.archlinux.org/title/Installation_guide) - The bible of Linux.
-* [🐉 Hyprland Wiki](https://wiki.hyprland.org/) - Documentation for the window manager animations and variables.
-* [🐚 Oh My Zsh](https://ohmyz.sh/) - How to configure the shell further.
-* [🎨 Pywal](https://github.com/dylanaraps/pywal) - Understanding the color generation backend.
+- [📖 Arch Linux Installation Guide](https://wiki.archlinux.org/title/Installation_guide) - The bible of Linux.
+- [🐉 Hyprland Wiki](https://wiki.hyprland.org/) - Documentation for the window manager animations and variables.
+- [🐚 Oh My Zsh](https://ohmyz.sh/) - How to configure the shell further.
+- [🎨 Pywal](https://github.com/dylanaraps/pywal) - Understanding the color generation backend.
 
 ---
 
