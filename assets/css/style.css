@@ -165,3 +165,12 @@ tr:last-child td {
 tr:hover {
     background: rgba(0, 240, 255, 0.05); /* Subtle cyan glow on hover */
 }
+
+/* --- Gallery Fix --- */
+/* Ensures screenshots fit perfectly in their grid cells */
+.grid img {
+    width: 100%;        /* Force image to fit container width */
+    height: auto;       /* Maintain aspect ratio */
+    display: block;     /* Remove extra space below image */
+    box-sizing: border-box; /* Keep borders inside the box */
+}
