@@ -1,0 +1,132 @@
+:root {
+  --bg-color: #050a14;
+  --card-bg: #0f1724;
+  --text-main: #e0e6ed;
+  --text-muted: #94a3b8;
+  --accent-pink: #ff0055;
+  --accent-cyan: #00f0ff;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-sans: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-top: 2em;
+}
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+h2 {
+  border-bottom: 2px solid var(--accent-pink);
+  padding-bottom: 10px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: 0.2s;
+}
+a:hover {
+  color: var(--accent-pink);
+  text-shadow: 0 0 8px var(--accent-pink);
+}
+code {
+  font-family: var(--font-mono);
+  background: #1e293b;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: var(--accent-cyan);
+  font-size: 0.9em;
+}
+
+/* Layout */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+header {
+  text-align: center;
+  padding: 4rem 0;
+  border-bottom: 1px solid #1e293b;
+}
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  font-family: var(--font-mono);
+}
+
+/* Grid for Tools */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-cyan);
+}
+.card h3 {
+  margin-top: 0;
+  color: var(--accent-pink);
+}
+
+/* Code Blocks */
+pre {
+  background: #000 !important;
+  border: 1px solid var(--accent-cyan);
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+}
+pre code {
+  background: transparent;
+  color: #fff;
+  padding: 0;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background: var(--accent-pink);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 1rem;
+  box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+}
+.btn:hover {
+  background: #d40047;
+  transform: scale(1.05);
+  color: white;
+  text-shadow: none;
+}
