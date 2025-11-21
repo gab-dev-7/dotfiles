@@ -10,18 +10,19 @@ This setup is designed to provide a streamlined and efficient desktop experience
 
 - **Window Manager:** [Hyprland](https://hyprland.org/) (Wayland compositor)
 - **Configuration Management:** [GNU Stow](https://www.gnu.org/software/stow/)
-- **Shell:** [Fish](https://fishshell.com/)
-- **Terminal:** [Foot](https://codeberg.org/dnkl/foot)
+- **Shell:** [Zsh](https://www.zsh.org/)
+- **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Editor:** [Neovim](https://neovim.io/)
 - **Prompt:** [Starship](https://starship.rs/)
 - **Ricing:** Utilizes tools like `pywal16`, `wpgtk`, `kvantum`, and custom themes for dynamic theming.
-- **Package Management:** Uses `pacman` and `yay` for installation, with `pacman.conf` modifications for `illogical-impulse` repository.
+- **Package Management:** Uses `pacman` and `yay` for installation.
 
 ## Included Configurations
 
 The repository includes configurations for various applications and system components, including but not limited to:
 
 - **Hyprland** (`hypr`)
+- **Zsh** (`zsh` / `.zshrc`)
 - **Neovim** (`nvim`)
 - **Kitty Terminal** (`kitty`)
 - **Waybar** (Status bar, `waybar`)
@@ -46,22 +47,21 @@ The repository includes configurations for various applications and system compo
     ```
 2.  Clone this repository to your home directory under the name `dotfiles`:
     ```bash
-    git clone https://github.com/gab-dev-7/dotfiles.git "$HOME/dotfiles"
+    git clone [https://github.com/gab-dev-7/dotfiles.git](https://github.com/gab-dev-7/dotfiles.git) "$HOME/dotfiles"
     ```
-3.  **Important:** This setup uses the `illogical-impulse` custom repository. Before running the installer, you must add this repository to your `/etc/pacman.conf`. Follow the instructions provided by the [illogical-impulse repository](https://github.com/Illogical-impulse/illogical-impulse) or its documentation.
-4.  Navigate to the cloned repository:
+3.  Navigate to the cloned repository:
     ```bash
     cd "$HOME/dotfiles"
     ```
-5.  Make the `install.sh` script executable:
+4.  Make the `install.sh` script executable:
     ```bash
     chmod +x install.sh
     ```
-6.  Run the installation script:
+5.  Run the installation script:
     ```bash
     ./install.sh
     ```
-7.  **Reboot** your system after the installation completes to ensure all changes are applied correctly.
+6.  **Reboot** your system after the installation completes to ensure all changes are applied correctly.
 
 ## Post-Installation
 
