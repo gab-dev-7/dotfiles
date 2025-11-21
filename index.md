@@ -23,32 +23,29 @@ If you are coming from Windows or macOS, this setup replaces the "floating windo
 <div class="grid">
     <div class="card">
         <h3>Hyprland</h3>
-        <p><strong>The Engine.</strong> A modern Wayland compositor that manages your windows. Unlike older X11 window managers (like i3), Hyprland offers buttery smooth animations, rounded corners, and blur effects, making the terminal feel futuristic rather than ancient.</p>
+        <p><strong>The Engine.</strong> A modern Wayland compositor. Unlike older X11 window managers, Hyprland offers buttery smooth animations, rounded corners, and blur effects, making the terminal feel futuristic.</p>
     </div>
     <div class="card">
         <h3>Zsh + Starship</h3>
-        <p><strong>The Shell.</strong> I use Zsh instead of Bash for its superior plugin ecosystem. It is paired with the <em>Starship</em> prompt, which gives you instant contextual info (Git branch, package versions, execution time) right in your command line.</p>
+        <p><strong>The Shell.</strong> Optimized for speed. It is paired with the <em>Starship</em> prompt, which gives you instant contextual info (Git branch, package versions, execution time) right in your command line.</p>
     </div>
     <div class="card">
         <h3>Neovim</h3>
-        <p><strong>The Editor.</strong> This is not standard Vim. It is configured with Lua to behave like a full IDE. It includes <strong>LSP</strong> (Language Server Protocol) for auto-completion/error checking, <strong>Treesitter</strong> for advanced syntax highlighting, and <strong>Telescope</strong> for fuzzy-finding files instantly.</p>
+        <p><strong>The Editor.</strong> Configured with Lua to behave like a full IDE. It includes <strong>LSP</strong> for auto-completion, <strong>Treesitter</strong> for highlighting, and <strong>Telescope</strong> for fuzzy-finding files.</p>
     </div>
     <div class="card">
         <h3>Pywal</h3>
-        <p><strong>The Aesthetic.</strong> This tool extracts the dominant colors from your wallpaper and applies them system-wide. Change your background, and your terminal, borders, and text colors automatically update to match the mood.</p>
+        <p><strong>The Aesthetic.</strong> Extracts colors from your wallpaper and applies them system-wide. Change your background, and your terminal, borders, and text colors automatically update to match.</p>
+    </div>
+    <div class="card">
+        <h3>Kitty</h3>
+        <p><strong>The Terminal.</strong> A GPU-accelerated terminal emulator. It offloads rendering to the graphics card for zero latency and supports displaying images directly in the command line.</p>
+    </div>
+    <div class="card">
+        <h3>Waybar</h3>
+        <p><strong>The Status Bar.</strong> A highly customizable bar that sits at the top of the screen. It displays workspaces, media controls, volume, and battery status, styled dynamically by Pywal.</p>
     </div>
 </div>
-
----
-
-## Dynamic Theming Explained
-One of the most complex parts of this setup is the color synchronization. I use a tool called **Pywal**.
-
-1.  You set a wallpaper using the command line.
-2.  Pywal analyzes the image and generates a 16-color palette (dark, light, and accents).
-3.  It "hot-reloads" these colors into **Kitty** (terminal), **Waybar** (status bar), and **Hyprland** (window borders) instantly.
-
-_Result:_ Your system always looks perfectly coordinated without you manually editing hex codes.
 
 ---
 
@@ -84,16 +81,47 @@ chmod +x install.sh
 ---
 
 ## Cheat Sheet
-The entire workflow is keyboard-driven. The `Super` key is the Windows/Command key.
 
-| Key Combo | Action | Explanation |
-| :--- | :--- | :--- |
-| `Super + Return` | **Open Terminal** | Launches Kitty. |
-| `Super + E` | **File Manager** | Launches Yazi (terminal-based file manager). |
-| `Super + Space` | **App Launcher** | Opens Wofi (like Spotlight/Search). |
-| `Super + Q` | **Close Window** | Kills the active window. |
-| `Super + F` | **Fullscreen** | Toggles the active window to full screen. |
-| `Super + Shift + Q` | **Exit** | Logs out of Hyprland. |
+The workflow is designed to be entirely keyboard-driven using the `Super` key (Windows Key).
+
+### 🚀 Applications
+| Key Combo | Action |
+| :--- | :--- |
+| `Super + Return` | **Terminal** (Kitty) |
+| `Super + E` | **File Manager** (Thunar) |
+| `Super + B` | **Browser** (Zen Browser) |
+| `Super + D` | **App Launcher** (Wofi) |
+| `Super + Space` | **Alternative Launcher** |
+
+### ⚙️ System Controls
+| Key Combo | Action |
+| :--- | :--- |
+| `Super + W` | **Change Wallpaper** (Random + Pywal) |
+| `Super + Shift + S` | **Screenshot** (Grimblast) |
+| `Super + P` | **Power Menu** (Shutdown/Reboot) |
+| `Super + L` | **Lock Screen** |
+| `Super + Shift + C` | **Clipboard History** |
+| `Super + Shift + B` | **Toggle Blue Light** (Gammastep) |
+
+### 🪟 Window Management
+| Key Combo | Action |
+| :--- | :--- |
+| `Super + Q` | **Close Active Window** |
+| `Super + F` | **Toggle Fullscreen** |
+| `Super + V` | **Toggle Floating Mode** |
+| `Super + H/J/K/L` | **Move Focus** (Vim keys) |
+| `Alt + Tab` | **Cycle Windows** |
+
+---
+
+## Resources & Documentation
+
+If you are new to this ecosystem, these are the essential guides to keep bookmarked:
+
+* [📖 Arch Linux Installation Guide](https://wiki.archlinux.org/title/Installation_guide) - The bible of Linux.
+* [🐉 Hyprland Wiki](https://wiki.hyprland.org/) - Documentation for the window manager animations and variables.
+* [🐚 Oh My Zsh](https://ohmyz.sh/) - How to configure the shell further.
+* [🎨 Pywal](https://github.com/dylanaraps/pywal) - Understanding the color generation backend.
 
 ---
 
