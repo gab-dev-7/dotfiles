@@ -85,6 +85,7 @@ chmod +x install.sh
 The workflow is designed to be entirely keyboard-driven using the `Super` key (Windows Key).
 
 ### 🚀 Applications
+
 | Key Combo | Action |
 | :--- | :--- |
 | `Super + Return` | **Terminal** (Kitty) |
@@ -94,6 +95,7 @@ The workflow is designed to be entirely keyboard-driven using the `Super` key (W
 | `Super + Space` | **Alternative Launcher** |
 
 ### ⚙️ System Controls
+
 | Key Combo | Action |
 | :--- | :--- |
 | `Super + W` | **Change Wallpaper** (Random + Pywal) |
@@ -104,6 +106,7 @@ The workflow is designed to be entirely keyboard-driven using the `Super` key (W
 | `Super + Shift + B` | **Toggle Blue Light** (Gammastep) |
 
 ### 🪟 Window Management
+
 | Key Combo | Action |
 | :--- | :--- |
 | `Super + Q` | **Close Active Window** |

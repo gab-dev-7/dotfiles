@@ -130,3 +130,38 @@ pre code {
   color: white;
   text-shadow: none;
 }
+
+/* Table Styling - Added for Cheat Sheet */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2rem 0;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #1e293b;
+}
+
+th {
+    background: #151e2e;
+    color: var(--accent-pink);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background: rgba(0, 240, 255, 0.05); /* Subtle cyan glow on hover */
+}
