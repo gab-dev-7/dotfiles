@@ -83,6 +83,7 @@ alias epprog="cd programming/IdeaProjects/gduarte/"
 alias linalg="cd OneDrive/Desktop/ETH/1S/LinAlg/"
 alias lice="cd OneDrive/Desktop/lice"
 alias ideas="cd Documents/ideas"
+alias install="sudo pacman -S"
 
 
 
