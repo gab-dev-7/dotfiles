@@ -1,6 +1,8 @@
 title: "Gab-Dev-7 Dotfiles"
 description: "A high-performance Arch Linux + Hyprland environment."
-baseurl: "/dotfiles" # keep empty for custom domain or user site
+baseurl: "/dotfiles"
 url: "https://gab-dev-7.github.io"
 markdown: kramdown
 permalink: /:title/
+exclude: ["README.md", "LICENSE", "install.sh"]
+theme: null

@@ -45,18 +45,17 @@ Ensure your system is up to date and git is installed.
 ```bash
 sudo pacman -Syu git
 ```
-````
 
-### 2\. Clone Repository
+### 2. Clone Repository
 
 Clone the repo to your home directory.
 
 ```bash
-git clone [https://github.com/gab-dev-7/dotfiles.git](https://github.com/gab-dev-7/dotfiles.git) "$HOME/dotfiles"
+git clone https://github.com/gab-dev-7/dotfiles.git "$HOME/dotfiles"
 cd "$HOME/dotfiles"
 ```
 
-### 3\. Run Installer
+### 3. Run Installer
 
 Make the script executable and run it. This will handle package installation and symlinking.
 
@@ -103,7 +102,3 @@ These are the core shortcuts to get started with the workflow.
 ## Gallery
 
 _Screenshots coming soon._
-
-```
-
-```
