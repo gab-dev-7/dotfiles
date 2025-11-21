@@ -4,7 +4,7 @@ title: Home
 ---
 
 <header>
-    <h1>.files</h1>
+    <h1>gab's .files</h1>
     <p class="subtitle">Arch Linux // Hyprland // Zsh // Pywal</p>
     <div style="margin-top: 1.5rem;">
         <a href="https://github.com/gab-dev-7/dotfiles" class="btn">View Source</a>

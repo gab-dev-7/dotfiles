@@ -1,70 +1,52 @@
-# gab-dev-7/dotfiles
+# .files
 
-This repository contains my personal dotfiles for my Arch Linux setup. It is configured for a minimal, modern, and productive Hyprland desktop environment, primarily managed using GNU Stow.
+<div align="center">
 
-## Overview
+[![Arch Linux](https://img.shields.io/badge/Arch-Linux-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white)](https://archlinux.org)
+[![Hyprland](https://img.shields.io/badge/Hyprland-WM-00f0ff?style=for-the-badge&logo=linux&logoColor=black)](https://hyprland.org)
+[![Zsh](https://img.shields.io/badge/Shell-Zsh-orange?style=for-the-badge&logo=zsh&logoColor=white)](https://zsh.org)
+[![Pywal](https://img.shields.io/badge/Theme-Pywal-ff0055?style=for-the-badge&logo=python&logoColor=white)](https://github.com/dylanaraps/pywal)
 
-This setup is designed to provide a streamlined and efficient desktop experience on Arch Linux. It leverages a collection of native packages, AUR packages, and custom configurations to create a tailored environment.
+<br>
 
-### Features
+[![Website](https://img.shields.io/badge/VIEW_DOCUMENTATION_SITE-ff0055?style=for-the-badge&logo=github&logoColor=white)](https://gab-dev-7.github.io/dotfiles)
 
-- **Window Manager:** [Hyprland](https://hyprland.org/) (Wayland compositor)
-- **Configuration Management:** [GNU Stow](https://www.gnu.org/software/stow/)
-- **Shell:** [Zsh](https://www.zsh.org/)
-- **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
-- **Editor:** [Neovim](https://neovim.io/)
-- **Prompt:** [Starship](https://starship.rs/)
-- **Ricing:** Utilizes tools like `pywal16`, `wpgtk`, `kvantum`, and custom themes for dynamic theming.
-- **Package Management:** Uses `pacman` and `yay` for installation.
+<br>
 
-## Included Configurations
+<img src="assets/images/h4.jpg" alt="Hyprland Screenshot" width="800" style="border-radius: 10px;">
 
-The repository includes configurations for various applications and system components, including but not limited to:
+</div>
 
-- **Hyprland** (`hypr`)
-- **Zsh** (`zsh` / `.zshrc`)
-- **Neovim** (`nvim`)
-- **Kitty Terminal** (`kitty`)
-- **Waybar** (Status bar, `waybar`)
-- **Wofi** (Application launcher, `wofi`)
-- **Dunst** (Notification daemon, `dunst`)
-- **Rofi** (Alternative launcher/dmenu, `rofi`)
-- **Tmux** (Terminal multiplexer, `tmux`)
-- **Yazi** (Terminal file manager, `yazi`)
-- **Btop** (System monitor, `btop`)
-- **GTK** themes and settings (`gtk`)
-- **Thunar** file manager (`thunar`)
-- **Wal** and **WPG** for dynamic theming (`wal`, `wpg`)
+---
 
-## Installation
+## ⚡ Quick Start
 
-> [!WARNING]
-> This script is tailored for a fresh Arch Linux installation and assumes you are comfortable with the system. It installs a large number of packages and modifies your system. Please review the `install.sh` script before running it.
+**Full documentation, gallery, and detailed setup guide are available on the [Website](https://gab-dev-7.github.io/dotfiles).**
 
-1.  Ensure your system is up-to-date and Git is installed:
-    ```bash
-    sudo pacman -Syu git
-    ```
-2.  Clone this repository to your home directory under the name `dotfiles`:
-    ```bash
-    git clone [https://github.com/gab-dev-7/dotfiles.git](https://github.com/gab-dev-7/dotfiles.git) "$HOME/dotfiles"
-    ```
-3.  Navigate to the cloned repository:
-    ```bash
-    cd "$HOME/dotfiles"
-    ```
-4.  Make the `install.sh` script executable:
-    ```bash
-    chmod +x install.sh
-    ```
-5.  Run the installation script:
-    ```bash
-    ./install.sh
-    ```
-6.  **Reboot** your system after the installation completes to ensure all changes are applied correctly.
+If you just want to install it immediately on a fresh Arch Linux system:
 
-## Post-Installation
+```bash
+# 1. Update & Install Git
+sudo pacman -Syu git
 
-- After rebooting, you should be able to select Hyprland as your session at the login manager (SDDM is included in the installation).
-- The script uses `stow` to symlink the configuration files into the appropriate locations in your `$HOME/.config` directory.
-- Explore the configurations within the `dotfiles` directory to understand and potentially customize the setup further.
+# 2. Clone (Must be named 'dotfiles')
+git clone [https://github.com/gab-dev-7/dotfiles.git](https://github.com/gab-dev-7/dotfiles.git) "$HOME/dotfiles"
+cd "$HOME/dotfiles"
+
+# 3. Install
+chmod +x install.sh
+./install.sh
+```
+
+---
+
+### 🔧 What's Inside?
+
+- **WM:** Hyprland (Wayland)
+- **Shell:** Zsh + Starship
+- **Terminal:** Kitty
+- **Editor:** Neovim (Lua configuration)
+- **Bar:** Waybar
+- **Colors:** Pywal (Auto-generated from wallpaper)
+
+> **Note:** This setup is designed for a keyboard-centric workflow using the `Super` (Windows) key.
