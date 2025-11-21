@@ -50,6 +50,8 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.cache/wal/colors.sh
 
+eval "$(zoxide init zsh)"
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -84,6 +86,8 @@ alias linalg="cd OneDrive/Desktop/ETH/1S/LinAlg/"
 alias lice="cd OneDrive/Desktop/lice"
 alias ideas="cd Documents/ideas"
 alias install="sudo pacman -S"
+alias gith="cd programming/gith"
+alias lg="lazygit"
 
 
 
@@ -267,3 +271,13 @@ fi
 # GO Configuration
 export GOPATH=$HOME/.local/go
 export PATH=$PATH:$GOPATH/bin
+
+# Auto-run onefetch when entering a git repository
+function chpwd() {
+    # Check if we are inside a git work tree (suppressing errors)
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+        # Add a newline for spacing
+        echo ""
+        onefetch
+    fi
+}
